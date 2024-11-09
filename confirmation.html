@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking - Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Booking Confirmation</h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="hotels.html">Hotels Menu</a>
+    <a href="booking.html">Book a Room</a>
+</nav>
+
+<!-- Confirmation Message -->
+<section id="confirmation">
+    <h2>Your booking has been confirmed!</h2>
+    <p>Thank you for booking with us. Here are your booking details:</p>
+    <ul>
+        <li><strong>Hotel:</strong> <span id="hotel-name"></span></li>
+        <li><strong>Name:</strong> <span id="guest-name"></span></li>
+        <li><strong>Email:</strong> <span id="guest-email"></span></li>
+        <li><strong>Check-in:</strong> <span id="checkin-date"></span></li>
+        <li><strong>Check-out:</strong> <span id="checkout-date"></span></li>
+        <li><strong>Rooms:</strong> <span id="rooms-count"></span></li>
+        <li><strong>Guests per Room:</strong> <span id="guests-per-room"></span></li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; 2024 Hotel Booking. All rights reserved.</p>
+</footer>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('hotel-name').textContent = urlParams.get('hotel');
+    document.getElementById('guest-name').textContent = urlParams.get('name');
+    document.getElementById('guest-email').textContent = urlParams.get('email');
+    document.getElementById('checkin-date').textContent = urlParams.get('checkin');
+    document.getElementById('checkout-date').textContent = urlParams.get('checkout');
+    document.getElementById('rooms-count').textContent = urlParams.get('rooms');
+    document.getElementById('guests-per-room').textContent = urlParams.get('guests');
+</script>
+
+</body>
+</html>

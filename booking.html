@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking - Book a Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Book Your Stay at <span id="hotelName"></span></h1>
+</header>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="hotels.html">Hotels Menu</a>
+    <a href="confirmation.html">Confirmation</a>
+</nav>
+
+<!-- Booking Form -->
+<section id="booking">
+    <h2>Booking Form</h2>
+    <form id="bookingForm" action="confirmation.html" method="GET">
+        <input type="hidden" id="hotelInput" name="hotel" value="">
+        <div>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="checkin">Check-In Date:</label>
+            <input type="date" id="checkin" name="checkin" required>
+        </div>
+        <div>
+            <label for="checkout">Check-Out Date:</label>
+            <input type="date" id="checkout" name="checkout" required>
+        </div>
+        <div>
+            <label for="rooms">Number of Rooms:</label>
+            <input type="number" id="rooms" name="rooms" min="1" required>
+        </div>
+        <div>
+            <label for="guests">Number of Guests per Room:</label>
+            <input type="number" id="guests" name="guests" min="1" required>
+        </div>
+        <button type="submit">Confirm Booking</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 Hotel Booking. All rights reserved.</p>
+</footer>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const hotelName = urlParams.get('hotel');
+    document.getElementById('hotelName').textContent = hotelName;
+    document.getElementById('hotelInput').value = hotelName;
+</script>
+
+</body>
+</html>
